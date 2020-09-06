@@ -3,7 +3,7 @@ import path from 'path';
 import { Connection, getRepository, getConnection } from 'typeorm';
 import createConnection from '../database';
 
-import Transaction from '../models/Transaction';
+import Transaction from '../models/Transactions';
 import Category from '../models/Category';
 
 import app from '../app';
@@ -13,11 +13,11 @@ let connection: Connection;
 describe('Transaction', () => {
   beforeAll(async () => {
     connection = await createConnection('test-connection');
-    
+
     await connection.query('DROP TABLE IF EXISTS transactions');
     await connection.query('DROP TABLE IF EXISTS categories');
     await connection.query('DROP TABLE IF EXISTS migrations');
-    
+
     await connection.runMigrations();
   });
 
