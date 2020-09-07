@@ -2,6 +2,8 @@ import { EntityRepository, Repository } from 'typeorm';
 
 import Transaction from '../models/Transactions';
 
+import { getSumTransactions } from '../utils/GetSumTransactions';
+
 interface Balance {
     income: number;
     outcome: number;
@@ -11,7 +13,16 @@ interface Balance {
 @EntityRepository(Transaction)
 class TransactionsRepository extends Repository<Transaction> {
     public async getBalance(): Promise<Balance> {
-        // TODO
+        const transactions = await this.find();
+
+        const income = getSumTransactions(transactions, 'income');
+        const outcome = getSumTransactions(transactions, 'outcome');
+
+        return {
+            income,
+            outcome,
+            total: income - outcome
+        } || null;
     }
 }
 
