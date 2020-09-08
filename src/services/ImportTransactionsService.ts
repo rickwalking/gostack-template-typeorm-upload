@@ -4,7 +4,7 @@ import { getCustomRepository, getRepository, In } from 'typeorm';
 
 import fs from 'fs';
 
-import Transactions from '../models/Transactions';
+import Transactions from '../models/Transaction';
 import Category from '../models/Category';
 
 import TransactionsRepository from '../repositories/TransactionsRepository';

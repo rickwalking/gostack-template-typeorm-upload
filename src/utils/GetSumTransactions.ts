@@ -1,4 +1,4 @@
-import Transaction from '../models/Transactions';
+import Transaction from '../models/Transaction';
 
 export function getSumTransactions(
     transations: Transaction[],

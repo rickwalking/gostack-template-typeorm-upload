@@ -1,10 +1,8 @@
-// import AppError from '../errors/AppError';
-
 import { getCustomRepository, getRepository } from 'typeorm';
 
 import TransactionsRepository from '../repositories/TransactionsRepository'
 
-import Transaction from '../models/Transactions';
+import Transaction from '../models/Transaction';
 import Category from '../models/Category';
 import AppError from '../errors/AppError';
 

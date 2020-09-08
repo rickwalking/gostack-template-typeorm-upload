@@ -1,6 +1,6 @@
 import { EntityRepository, Repository } from 'typeorm';
 
-import Transaction from '../models/Transactions';
+import Transaction from '../models/Transaction';
 
 import { getSumTransactions } from '../utils/GetSumTransactions';
 
